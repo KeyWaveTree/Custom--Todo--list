@@ -26,16 +26,17 @@ tasks.withType(JavaCompile) {
 
 application {
   mainModule = 'com.customtodolist'
-  mainClass = 'com.customtodolist.HelloApplication'
+  mainClass = 'com.customtodolist.IndexApplication'
 }
 
 javafx {
   version = '21.0.1'
-  modules = ['javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.swing', 'javafx.base']
+  modules = ['javafx.controls', 'javafx.fxml', 'javafx.graphics',
+             'javafx.swing', 'javafx.base']
 }
 
 dependencies {
-
+  implementation fileTree(dir: 'dashboard_lib', includes: ['*.jar'])
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }

@@ -3,12 +3,12 @@ package com.customtodolist;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class IndexController {
     @FXML
-    private Label welcomeText;
+    private Label indexText;
 
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+        indexText.setText("Welcome to JavaFX Application!");
     }
 }
