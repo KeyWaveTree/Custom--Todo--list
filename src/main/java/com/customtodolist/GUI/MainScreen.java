@@ -1,5 +1,6 @@
 package com.customtodolist.GUI;
 
+import com.customtodolist.DB.DBManager;
 import com.customtodolist.GUI.drawer.DrawerBuilder;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.fonts.roboto.FlatRobotoFont;
@@ -47,12 +48,13 @@ public class MainScreen extends JFrame{
 
     }
     public static void main(String[] args) {
+        DBManager.selectTasks();
         //화면 설정
         FlatRobotoFont.install();
         FlatLaf.registerCustomDefaultsSource("dashboard.themes");
         UIManager.put("defaultFont", new Font(FlatRobotoFont.FAMILY, Font.PLAIN, 14));
         FlatMacDarkLaf.setup();
-        
+
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
