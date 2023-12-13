@@ -25,8 +25,8 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-  mainModule = 'com.customtodolist'
-  mainClass = 'com.customtodolist.IndexApplication'
+  mainModule = 'com.custom_todolist'
+  mainClass = 'com.custom_todolist.IndexApplication'
 }
 
 javafx {
