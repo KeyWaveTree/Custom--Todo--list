@@ -1,11 +1,11 @@
 package com.customtodolist.DB;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.ResultSet;
-import java.sql.PreparedStatement;
-import java.sql.Statement;
+import java.awt.*;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.List;
 
 public class DBManager {
     private static final String URL = "jdbc:sqlite:src/main/java/com/customtodolist/DB/TodoDatabase";
@@ -67,4 +67,28 @@ public class DBManager {
             System.out.println("Database operation failed: " + e.getMessage());
         }
     }
+
+    public static List<Map<String, Object>> getTodoItems() throws SQLException {
+        List<Map<String, Object>> todoItems = new ArrayList<>();
+        String sql = "SELECT * FROM Tasks"; // Adjust this query based on your table structure
+
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            ResultSetMetaData metaData = rs.getMetaData();
+            int columnCount = metaData.getColumnCount();
+
+            while (rs.next()) {
+                Map<String, Object> row = new HashMap<>();
+                for (int i = 1; i <= columnCount; i++) {
+                    row.put(metaData.getColumnName(i), rs.getObject(i));
+                }
+                todoItems.add(row);
+            }
+        }
+
+        return todoItems;
+    }
+
 }
