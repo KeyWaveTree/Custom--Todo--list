@@ -129,22 +129,22 @@
 package com.custom_todolist.GUI;
 
 // ... (other imports)
-        import com.custom_todolist.DB.DBManager;
-        import com.custom_todolist.GUI.drawer.DrawerBuilder;
-        import com.custom_todolist.GUI.tabbed.WindowsTabbed;
-        import com.formdev.flatlaf.FlatLaf;
-        import com.formdev.flatlaf.fonts.roboto.FlatRobotoFont;
-        import com.formdev.flatlaf.themes.FlatMacDarkLaf;
-        import raven.drawer.Drawer;
-        import raven.popup.GlassPanePopup;
+import com.custom_todolist.DB.DBManager;
+import com.custom_todolist.GUI.drawer.DrawerBuilder;
+import com.custom_todolist.GUI.tabbed.WindowsTabbed;
+import com.formdev.flatlaf.FlatLaf;
+import com.formdev.flatlaf.fonts.roboto.FlatRobotoFont;
+import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+import raven.drawer.Drawer;
+import raven.popup.GlassPanePopup;
 
-        import javax.swing.*;
-        import java.awt.*;
-        import java.awt.event.*;
-        import java.io.UnsupportedEncodingException;
-        import java.sql.SQLException;
-        import java.util.List;
-        import java.util.Map;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.UnsupportedEncodingException;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 
 public class MainScreen extends JFrame {
     private JPanel body;

@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.List;
 
 public class DBManager {
-    private static final String URL = "jdbc:sqlite:com/custom_todolist/DB/TodoDatabase";
+    private static final String URL = "jdbc:sqlite:src/main/java/com/custom_todolist/DB/TodoDatabase";
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL);
